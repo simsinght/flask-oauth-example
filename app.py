@@ -5,12 +5,12 @@ from flask.ext.login import LoginManager, UserMixin, login_user, logout_user,\
 from oauth import OAuthSignIn
 
 
-from oauthConfig import credentials
+from oauthConfig import oauthIdsAndSecrets
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top secret!'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-app.config['OAUTH_CREDENTIALS'] = credentials
+app.config['OAUTH_CREDENTIALS'] = oauthIdsAndSecrets
 
 db = SQLAlchemy(app)
 lm = LoginManager(app)
