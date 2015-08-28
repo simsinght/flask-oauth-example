@@ -4,8 +4,10 @@ from flask.ext.login import LoginManager, UserMixin, login_user, logout_user,\
     current_user
 from oauth import OAuthSignIn
 
-
+# copy oauthConfig.py.EXAMPLE to oauthConfig.py
+# oauthConfig.py is NOT COMMITTED to the github repo.
 from oauthConfig import oauthIdsAndSecrets
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top secret!'
