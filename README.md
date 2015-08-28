@@ -8,7 +8,44 @@ Forked by P. Conrad from: https://github.com/miguelgrinberg/flask-oauth-example 
 
 # Google Example
 
-If you want to do Google instead of Facebook or Twitter, you'll need some code similar to this code for Twitter:
+
+Here are some changes that were done to make this work with Google as well as Facebook and Twitter.
+
+In app.py, the original had this (note that these numbers are fake&mdash;each user of the OAuth API has to get their own private numbers from Facebook, Google, or Twitter, and these numbers should NOT be made public!  To be honest, these should be factored out into a configuration file that is NOT stored in github.)
+
+```python
+app.config['OAUTH_CREDENTIALS'] = {
+    'facebook': {
+        'id': '470154729788964',
+        'secret': '010cc08bd4f51e34f3f3e684fbdea8a7'
+    },
+    'twitter': {
+        'id': '3RzWQclolxWZIMq5LJqzRZPTl',
+        'secret': 'm9TEd58DSEtRrZHpz2EjrV9AhsBRxKMo8m3kuIZj3zLwzwIimt'
+    }
+}
+```
+
+To add support for Google, we'd just add another item to this dictionary:
+
+```python
+app.config['OAUTH_CREDENTIALS'] = {
+    'facebook': {
+        'id': '470154729788964',
+        'secret': '010cc08bd4f51e34f3f3e684fbdea8a7'
+    },
+    'twitter': {
+        'id': '3RzWQclolxWZIMq5LJqzRZPTl',
+        'secret': 'm9TEd58DSEtRrZHpz2EjrV9AhsBRxKMo8m3kuIZj3zLwzwIimt'
+    },
+     'google': {
+        'id': 'fu23kv8dIMq5LJqzRZP3Rz9Tl',
+        'secret': 'ZHpz2EjrtRrIZj3zLwV9AhsBRxKMo8m3kum9TEd58DSEzwIimt'
+    }
+}
+```
+
+In addition, if you want to do Google instead of Facebook or Twitter, you'll need to some code similar to this code for Twitter:
 
 ```
 class TwitterSignIn(OAuthSignIn):
