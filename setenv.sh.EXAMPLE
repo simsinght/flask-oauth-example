@@ -1,0 +1,8 @@
+
+# Copy this to setenv.sh and then change values below.
+# Before running your python app, do:
+#   . setenv.sh
+# at the Unix prompt
+
+export FACEBOOK_APP_ID=12345678901234567890
+export FACEBOOK_APP_SECRET=we98fhawe98fhawe9faf

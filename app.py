@@ -7,12 +7,25 @@ from oauth import OAuthSignIn
 # copy oauthConfig.py.EXAMPLE to oauthConfig.py
 # oauthConfig.py is NOT COMMITTED to the github repo.
 
-import oauthConfig
+import os
+
+# These you get from the developer pages of Facebook, Twitter and Google.
+# See the README.md for more instructions.
+
+import os
+
+oauthIdsAndSecrets = {
+    'facebook': {
+        'id': os.environ['FACEBOOK_APP_ID'],
+        'secret': os.environ['FACEBOOK_APP_SECRET'],
+    },
+}
+
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = oauthConfig.mySecretKey
+app.config['SECRET_KEY'] = os.environ['SESSION_SECRET']
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-app.config['OAUTH_CREDENTIALS'] = oauthConfig.oauthIdsAndSecrets
+app.config['OAUTH_CREDENTIALS'] = oauthIdsAndSecrets
 
 db = SQLAlchemy(app)
 lm = LoginManager(app)
