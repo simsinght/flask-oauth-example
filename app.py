@@ -6,13 +6,13 @@ from oauth import OAuthSignIn
 
 # copy oauthConfig.py.EXAMPLE to oauthConfig.py
 # oauthConfig.py is NOT COMMITTED to the github repo.
-from oauthConfig import oauthIdsAndSecrets
 
+import oauthConfig
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'top secret!'
+app.config['SECRET_KEY'] = oauthConfig.mySecretKey
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
-app.config['OAUTH_CREDENTIALS'] = oauthIdsAndSecrets
+app.config['OAUTH_CREDENTIALS'] = oauthConfig.oauthIdsAndSecrets
 
 db = SQLAlchemy(app)
 lm = LoginManager(app)

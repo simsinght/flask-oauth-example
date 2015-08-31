@@ -1,5 +1,12 @@
 # Copy this file to oauthConfig.py BEFORE entering the actual numbers from the services!
 
+# This next one is any random string of letters and numbers.
+
+mySecretKey = 'zxczx23r23sfewfw9we8fw9e8fwe9f8wef'
+
+# These you get from the developer pages of Facebook, Twitter and Google.
+# See the README.md for more instructions.
+
 oauthIdsAndSecrets = {
     'facebook': {
         'id': '470154729788964',
