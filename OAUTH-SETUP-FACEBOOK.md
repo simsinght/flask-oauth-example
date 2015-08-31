@@ -1,10 +1,11 @@
 To set up Facebook OAuth for your application:
 
-# Navigate to https://developers.facebook.com, and select 
+# Select "add new app" at developers.facebook.com
+
+Navigate to https://developers.facebook.com and select "Add New App":
 
 ![Add new app](/images/facebook/Facebook.200.developers.facebook.com.AddNewApp.png)
 
-# Select 
 
 ![create new facebook app id](/images/facebook/Facebook.340.start.creating.new.facebook.app.id.png)
 
