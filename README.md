@@ -6,6 +6,17 @@ Example code from Miguel Grinberg's "OAuth Authentication with Flask" article. h
 
 Forked by P. Conrad from: https://github.com/miguelgrinberg/flask-oauth-example for UCSD SPIS 2015.
 
+
+# Making it work on Heroku:
+
+(1) Do this to get the database on heroku:
+
+```
+ heroku addons:create heroku-postgresql:hobby-dev
+```
+
+TODO: continue from here
+
 # Google Example
 
 
@@ -80,3 +91,4 @@ class GoogleSignIn(OAuthSignIn):
             base_url='TODO-FILL-THIS-IN''
         )
 ```
+
