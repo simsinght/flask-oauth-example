@@ -14,6 +14,20 @@ Forked by P. Conrad from: https://github.com/miguelgrinberg/flask-oauth-example 
 ```
  heroku addons:create heroku-postgresql:hobby-dev
 ```
+Example:
+
+```
+pconrad$  heroku addons:create heroku-postgresql:hobby-dev
+Creating postgresql-pointy-3988... done, (free)
+Adding postgresql-pointy-3988 to spis15-flask-oauth-example... done
+Setting DATABASE_URL and restarting spis15-flask-oauth-example... done, v4
+Database has been created and is available
+ ! This database is empty. If upgrading, you can transfer
+ ! data from another database with pgbackups:restore
+Use `heroku addons:docs heroku-postgresql` to view documentation.
+pconrad$ 
+```
+
 
 TODO: continue from here
 

@@ -1,7 +1,7 @@
 from flask import Flask, redirect, url_for, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager, UserMixin, login_user, logout_user,\
-    current_user
+    current_user, session
 from oauth import OAuthSignIn
 
 # copy oauthConfig.py.EXAMPLE to oauthConfig.py
@@ -24,7 +24,7 @@ oauthIdsAndSecrets = {
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ['SESSION_SECRET']
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config['OAUTH_CREDENTIALS'] = oauthIdsAndSecrets
 
 db = SQLAlchemy(app)
@@ -52,6 +52,7 @@ def index():
 
 @app.route('/logout')
 def logout():
+    session.clear()   # Added by P Conrad
     logout_user()
     return redirect(url_for('index'))
 
