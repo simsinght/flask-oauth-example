@@ -6,3 +6,5 @@
 
 export FACEBOOK_APP_ID=12345678901234567890
 export FACEBOOK_APP_SECRET=we98fhawe98fhawe9faf
+export FACEBOOK_APP_SECRET=we89fw9e8fwe98f
+export DATABASE_URL=sqlite:///db.sqlite
